@@ -4,16 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Layout</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
     <link href="./output.css" rel="stylesheet" />
+
+    <style>
+      * {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div
-      class="w-full min-h-screen bg-[#00B2B1]"
-      style="background-image: url('./bg.png'); background-size: 100% 100%"
+      class="w-full min-h-screen bg-[url('./mob-bg.png')] sm:bg-[url('./bg.png')] p-10 sm:p-0"
+      style="background-size: 100% 100%"
     >
-      <div class="w-full pt-12 pb-5 px-56">
-        <div class="w-full flex items-center justify-between">
-          <h1 class="text-5xl font-semibold text-white" id="main-heading">
+      <div class="w-full sm:pt-12 sm:pb-5 sm:px-56">
+        <div
+          class="w-full flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 sm:items-center justify-between"
+        >
+          <h1
+            class="text-2xl sm:text-5xl font-bold text-white"
+            id="main-heading"
+          >
             Quick Survey
           </h1>
 
@@ -64,7 +83,11 @@
             <h6 class="text-white text-xs" id="progress-percentage">0%</h6>
           </div>
         </div>
-        <p id="sub-heading" class="text-white font-light">
+
+        <p
+          id="sub-heading"
+          class="text-white font-medium mt-2 text-base sm:text-lg"
+        >
           This survey only takes a few mins. Your response will help us improve
           our product.
         </p>
@@ -72,7 +95,7 @@
 
       <form class="w-full">
         <!-- Quick Survey -->
-        <div id="quick-survey" class="w-1/3 h-auto mx-auto">
+        <div id="quick-survey" class="w-auto sm:w-1/3 h-auto mx-auto py-5">
           <div>
             <label for="email">
               <span class="p-3 text-white font-light">Email id:</span>
@@ -89,12 +112,16 @@
 
           <br />
 
-          <div class="w-full rounded-2xl bg-gray-50 shadow-md p-10">
-            <h3 class="text-2xl font-semibold text-gray-700">
+          <div class="w-full rounded-2xl bg-gray-50 shadow-md p-5 sm:p-10">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               Which tour did you take?
             </h3>
 
             <br />
+
+            <!-- <div class="w-full">
+              <select name="tour-list" id="tour-list"></select>
+            </div> -->
 
             <div
               class="w-full max-h-72 overflow-y-scroll rounded-md shadow-md bg-white p-5 text-gray-700"
@@ -139,11 +166,11 @@
 
           <br />
 
-          <div class="w-full text-center">
+          <div class="w-full text-right sm:text-center">
             <button
               type="button"
               onclick="onNextClick(0, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
@@ -151,18 +178,20 @@
         </div>
 
         <!-- About You - 1 -->
-        <div id="about-you-1" class="w-1/3 h-auto mx-auto hidden">
+        <div id="about-you-1" class="sm:w-1/3 h-auto mx-auto hidden">
           <br />
           <br />
 
-          <div class="w-full h-96 bg-white rounded-2xl shadow-md p-5 px-14">
-            <h3 class="text-2xl font-semibold text-gray-700">
+          <div
+            class="w-full sm:h-96 bg-white rounded-2xl shadow-md p-5 sm:px-14"
+          >
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               How many people were in your group?
             </h3>
 
             <br />
 
-            <div class="w-1/2 mx-auto">
+            <div class="sm:w-1/2 mx-auto">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="just-me" class="flex gap-5 items-center">
@@ -247,14 +276,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -276,18 +305,20 @@
         </div>
 
         <!-- About You 2 -->
-        <div id="about-you-2" class="w-1/3 h-auto mx-auto hidden">
+        <div id="about-you-2" class="sm:w-1/3 h-auto mx-auto hidden">
           <br />
           <br />
 
-          <div class="w-full h-96 bg-white rounded-2xl shadow-md p-5 px-14">
-            <h3 class="text-2xl font-semibold text-gray-700">
+          <div
+            class="w-full sm:h-96 bg-white rounded-2xl shadow-md p-5 sm:px-14"
+          >
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               What's your age group?
             </h3>
 
             <br />
 
-            <div class="w-1/2 mx-auto">
+            <div class="sm:w-1/2 mx-auto">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="age-group-1" class="flex gap-5 items-center">
@@ -372,14 +403,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -401,20 +432,20 @@
         </div>
 
         <!-- Tour Experience 1 -->
-        <div id="tour-experience-1" class="w-2/3 h-auto mx-auto hidden">
+        <div id="tour-experience-1" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               What did you ENJOY about the TOUR experience
             </h3>
 
             <br />
 
-            <div class="w-full grid grid-cols-2 gap-4">
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-0 sm:gap-4">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="experience-1" class="flex gap-5 items-center">
@@ -580,14 +611,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -609,20 +640,20 @@
         </div>
 
         <!-- Tour Experience 2 -->
-        <div id="tour-experience-2" class="w-2/3 h-auto mx-auto hidden">
+        <div id="tour-experience-2" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               What did you think about the TOUR CONTENT?
             </h3>
 
             <br />
 
-            <div class="w-full grid grid-cols-2 gap-4">
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="content-1" class="flex gap-5 items-center">
@@ -760,14 +791,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -789,14 +820,14 @@
         </div>
 
         <!-- Tour Experience 3 -->
-        <div id="tour-experience-3" class="w-2/3 h-auto mx-auto hidden">
+        <div id="tour-experience-3" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               Any suggestions to make our tour experience better?
             </h3>
 
@@ -839,14 +870,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -868,20 +899,20 @@
         </div>
 
         <!-- App Experience 1 -->
-        <div id="app-experience-form-1" class="w-2/3 h-auto mx-auto hidden">
+        <div id="app-experience-form-1" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               What did you think about the APP experience?
             </h3>
 
             <br />
 
-            <div class="w-full grid grid-cols-2 gap-4">
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="app-experience-1" class="flex gap-5 items-center">
@@ -1020,14 +1051,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -1049,14 +1080,14 @@
         </div>
 
         <!-- App Experience 2 -->
-        <div id="app-experience-form-2" class="w-2/3 h-auto mx-auto hidden">
+        <div id="app-experience-form-2" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               Any there any features or functions that we should add to the app?
             </h3>
 
@@ -1099,14 +1130,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -1128,20 +1159,20 @@
         </div>
 
         <!-- Marketing 1 -->
-        <div id="marketing-1" class="w-2/3 h-auto mx-auto hidden">
+        <div id="marketing-1" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               How did you find out about us?
             </h3>
 
             <br />
 
-            <div class="w-full grid grid-cols-2 gap-4">
+            <div class="w-full grid grid-cols-1 sm:grid-cols-2 sm:gap-4">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="find-1" class="flex gap-5 items-center">
@@ -1307,14 +1338,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -1336,18 +1367,20 @@
         </div>
 
         <!-- Marketing 2 -->
-        <div id="marketing-2" class="w-1/3 h-auto mx-auto hidden">
+        <div id="marketing-2" class="sm:w-1/3 h-auto mx-auto hidden">
           <br />
           <br />
 
-          <div class="w-full h-96 bg-white rounded-2xl shadow-md p-5 px-14">
-            <h3 class="text-2xl font-semibold text-gray-700">
+          <div
+            class="w-full sm:h-96 bg-white rounded-2xl shadow-md p-5 sm:px-14"
+          >
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               Will you recommend Shaka Guide to your friends?
             </h3>
 
             <br />
 
-            <div class="w-1/2 mx-auto">
+            <div class="sm:w-1/2 mx-auto">
               <ul class="w-full list-none">
                 <li class="w-full p-3">
                   <label for="recommend-1" class="flex gap-5 items-center">
@@ -1445,14 +1478,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -1474,14 +1507,14 @@
         </div>
 
         <!-- Next Tour 1 -->
-        <div id="next-tour-1" class="w-2/3 h-auto mx-auto hidden">
+        <div id="next-tour-1" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               Where should Shaka Guide go next? What new tours would you like to
               see?
             </h3>
@@ -1525,14 +1558,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -1554,14 +1587,14 @@
         </div>
 
         <!-- Next Tour 2 -->
-        <div id="next-tour-2" class="w-2/3 h-auto mx-auto hidden">
+        <div id="next-tour-2" class="sm:w-2/3 h-auto mx-auto hidden">
           <br />
           <br />
 
           <div
-            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 px-14"
+            class="w-full h-auto bg-gray-100 rounded-2xl shadow-md p-5 sm:px-14"
           >
-            <h3 class="text-2xl font-semibold text-gray-700">
+            <h3 class="text-base sm:text-2xl font-semibold text-gray-700">
               Any additional comments or suggestions?
             </h3>
 
@@ -1604,14 +1637,14 @@
             <button
               type="button"
               onclick="onNextClick(1, 0)"
-              class="w-40 p-3 rounded-full text-white bg-gray-800"
+              class="w-20 sm:w-40 p-3 rounded-full text-white bg-gray-800"
             >
               Next
             </button>
 
             <button
               type="button"
-              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible"
+              class="w-auto p-3 px-4 rounded-full bg-transparent shadow-md text-gray-700 invisible hidden sm:block"
             >
               <svg
                 width="8"
@@ -1633,23 +1666,30 @@
         </div>
 
         <!-- Thank You -->
-        <div id="thank-you" class="w-1/3 h-auto mx-auto hidden">
+        <div id="thank-you" class="sm:w-1/2 h-auto mx-auto hidden">
           <br />
-          <br />
+          <br class="hidden sm:block" />
 
-          <div class="w-full h-auto text-center p-5 px-14 text-white mt-20">
-            <h3 class="text-4xl font-bold text-white">Thank You!</h3>
+          <div
+            class="w-full h-auto text-center p-5 sm:px-14 text-white sm:mt-20"
+          >
+            <h3 class="text-5xl sm:text-4xl font-bold text-white">
+              Thank You!
+            </h3>
 
             <br />
+            <br />
 
-            <p>
+            <p class="font-semibold text-xl">
               This survey will help us improve our product so that we can give
               you a better experience next time.
             </p>
 
             <br />
 
-            <p>Till then, keep exploring with us.</p>
+            <p class="font-semibold text-xl">
+              Till then, keep exploring with us.
+            </p>
           </div>
         </div>
       </form>
