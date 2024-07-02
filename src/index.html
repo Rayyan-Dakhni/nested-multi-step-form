@@ -18,6 +18,20 @@
       * {
         font-family: "Poppins", sans-serif;
       }
+
+      #quick-survey-menu::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      #quick-survey-menu::-webkit-scrollbar-track {
+        background-color: #f7f7f7;
+        border-radius: 100px;
+      }
+
+      #quick-survey-menu::-webkit-scrollbar-thumb {
+        background-color: #374151;
+        border-radius: 100px;
+      }
     </style>
   </head>
   <body>
@@ -95,18 +109,41 @@
 
       <form class="w-full">
         <!-- Quick Survey -->
-        <div id="quick-survey" class="w-auto sm:w-1/3 h-auto mx-auto py-5">
+        <div
+          id="quick-survey"
+          class="w-auto sm:w-1/3 h-auto mx-auto py-5"
+          style="max-width: 560px"
+        >
           <div>
             <label for="email">
               <span class="p-3 text-white font-light">Email id:</span>
 
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="w-full bg-white border-none outline-none mt-2 p-3 px-4 rounded-md text-gray-700 shadow-md"
-                value="john.doe@gmail.com"
-              />
+              <div
+                class="w-full flex justify-between items-center bg-white p-3 px-4 rounded-xl shadow-md"
+              >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full border-none outline-none mt-2 rounded-md text-gray-700"
+                  value="john.doe@gmail.com"
+                />
+
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="1.5em"
+                  width="1.5em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a.996.996 0 0 0 0-1.41l-2.34-2.34a.996.996 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+                  ></path>
+                </svg>
+              </div>
             </label>
           </div>
 
@@ -119,48 +156,80 @@
 
             <br />
 
-            <!-- <div class="w-full">
-              <select name="tour-list" id="tour-list"></select>
-            </div> -->
+            <div class="w-full relative shadow-md rounded-2xl">
+              <button
+                type="button"
+                onclick="ToggleMenu()"
+                class="w-full bg-white p-3 px-5 rounded-2xl flex justify-between items-center shadow-md"
+              >
+                <span>Road to Hana </span>
 
-            <div
-              class="w-full max-h-72 overflow-y-scroll rounded-md shadow-md bg-white p-5 text-gray-700"
-            >
-              <label for="tour-1" class="w-full block py-3 border-b">
-                Road to Hana
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  height="1.5em"
+                  width="1.5em"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="chevron"
+                  class="transition-all transform"
+                >
+                  <path
+                    fill="none"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="m112 184 144 144 144-144"
+                  ></path>
+                </svg>
+              </button>
 
-                <input type="radio" name="tour-option" id="tour-1" hidden />
-              </label>
+              <div
+                id="quick-survey-menu-container"
+                class="absolute sm:relative left-0 top-8 sm:-top-3 w-full pr-7 py-2 bg-white rounded-b-2xl hidden sm:block"
+              >
+                <div
+                  id="quick-survey-menu"
+                  class="w-full px-5 max-h-40 sm:max-h-56 overflow-y-scroll"
+                >
+                  <label for="tour-1" class="w-full block py-3 border-b">
+                    Road to Hana
 
-              <label for="tour-1" class="w-full block py-3 border-b">
-                Road to Hana
+                    <input type="radio" name="tour-option" id="tour-1" hidden />
+                  </label>
 
-                <input type="radio" name="tour-option" id="tour-1" hidden />
-              </label>
+                  <label for="tour-1" class="w-full block py-3 border-b">
+                    Road to Hana
 
-              <label for="tour-1" class="w-full block py-3 border-b">
-                Road to Hana
+                    <input type="radio" name="tour-option" id="tour-1" hidden />
+                  </label>
 
-                <input type="radio" name="tour-option" id="tour-1" hidden />
-              </label>
+                  <label for="tour-1" class="w-full block py-3 border-b">
+                    Road to Hana
 
-              <label for="tour-1" class="w-full block py-3 border-b">
-                Road to Hana
+                    <input type="radio" name="tour-option" id="tour-1" hidden />
+                  </label>
 
-                <input type="radio" name="tour-option" id="tour-1" hidden />
-              </label>
+                  <label for="tour-1" class="w-full block py-3 border-b">
+                    Road to Hana
 
-              <label for="tour-1" class="w-full block py-3 border-b">
-                Road to Hana
+                    <input type="radio" name="tour-option" id="tour-1" hidden />
+                  </label>
 
-                <input type="radio" name="tour-option" id="tour-1" hidden />
-              </label>
+                  <label for="tour-1" class="w-full block py-3 border-b">
+                    Road to Hana
 
-              <label for="tour-1" class="w-full block py-3 border-b">
-                Road to Hana
+                    <input type="radio" name="tour-option" id="tour-1" hidden />
+                  </label>
 
-                <input type="radio" name="tour-option" id="tour-1" hidden />
-              </label>
+                  <label for="tour-1" class="w-full block py-3 border-b">
+                    Road to Hana
+
+                    <input type="radio" name="tour-option" id="tour-1" hidden />
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -178,7 +247,11 @@
         </div>
 
         <!-- About You - 1 -->
-        <div id="about-you-1" class="sm:w-1/3 h-auto mx-auto hidden">
+        <div
+          id="about-you-1"
+          class="sm:w-1/3 h-auto mx-auto hidden"
+          style="max-width: 560px"
+        >
           <br />
           <br />
 
@@ -305,7 +378,11 @@
         </div>
 
         <!-- About You 2 -->
-        <div id="about-you-2" class="sm:w-1/3 h-auto mx-auto hidden">
+        <div
+          id="about-you-2"
+          class="sm:w-1/3 h-auto mx-auto hidden"
+          style="max-width: 560px"
+        >
           <br />
           <br />
 
@@ -432,7 +509,11 @@
         </div>
 
         <!-- Tour Experience 1 -->
-        <div id="tour-experience-1" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="tour-experience-1"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -640,7 +721,11 @@
         </div>
 
         <!-- Tour Experience 2 -->
-        <div id="tour-experience-2" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="tour-experience-2"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -820,7 +905,11 @@
         </div>
 
         <!-- Tour Experience 3 -->
-        <div id="tour-experience-3" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="tour-experience-3"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -899,7 +988,11 @@
         </div>
 
         <!-- App Experience 1 -->
-        <div id="app-experience-form-1" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="app-experience-form-1"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -1080,7 +1173,11 @@
         </div>
 
         <!-- App Experience 2 -->
-        <div id="app-experience-form-2" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="app-experience-form-2"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -1159,7 +1256,11 @@
         </div>
 
         <!-- Marketing 1 -->
-        <div id="marketing-1" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="marketing-1"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -1367,7 +1468,11 @@
         </div>
 
         <!-- Marketing 2 -->
-        <div id="marketing-2" class="sm:w-1/3 h-auto mx-auto hidden">
+        <div
+          id="marketing-2"
+          class="sm:w-1/3 h-auto mx-auto hidden"
+          style="max-width: 560px"
+        >
           <br />
           <br />
 
@@ -1507,7 +1612,11 @@
         </div>
 
         <!-- Next Tour 1 -->
-        <div id="next-tour-1" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="next-tour-1"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -1587,7 +1696,11 @@
         </div>
 
         <!-- Next Tour 2 -->
-        <div id="next-tour-2" class="sm:w-2/3 h-auto mx-auto hidden">
+        <div
+          id="next-tour-2"
+          class="sm:w-2/3 h-auto mx-auto hidden"
+          style="max-width: 850px"
+        >
           <br />
           <br />
 
@@ -1666,7 +1779,11 @@
         </div>
 
         <!-- Thank You -->
-        <div id="thank-you" class="sm:w-1/2 h-auto mx-auto hidden">
+        <div
+          id="thank-you"
+          class="sm:w-1/2 h-auto mx-auto hidden"
+          style="max-width: 560px"
+        >
           <br />
           <br class="hidden sm:block" />
 
@@ -1696,6 +1813,16 @@
     </div>
 
     <script>
+      const ToggleMenu = () => {
+        if (document.body.clientWidth <= 640) {
+          document
+            .querySelector("#quick-survey-menu-container")
+            .classList.toggle("hidden");
+
+          document.querySelector("#chevron").classList.toggle("rotate-180");
+        }
+      };
+
       let formSteps = [
         {
           id: 1,
